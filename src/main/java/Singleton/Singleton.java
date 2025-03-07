@@ -1,9 +1,11 @@
+package Singleton;
+
 public class Singleton {
     private static Singleton s = null;
 
-    Singleton(){
+    public  Singleton(){
         if(s != null){
-            throw new RuntimeException("Singleton already present");
+            throw new RuntimeException("Singleton.Singleton already present");
         }
 
         s = this;
