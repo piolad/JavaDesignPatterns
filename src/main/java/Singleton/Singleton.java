@@ -3,7 +3,7 @@ package Singleton;
 public class Singleton {
     private static Singleton s = null;
 
-    public  Singleton(){
+    private  Singleton(){
         if(s != null){
             throw new RuntimeException("Singleton.Singleton already present");
         }

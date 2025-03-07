@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SingletonTests {
     @Test
     void TestOnlyOneInstance(){
-        Singleton s = Singleton.getInstance();
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
 
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            Singleton s1 = new Singleton();
-            }
-        );
+        assertSame(s1, s2, "Instances of singleton should be the same");
+    }
 
+    @Test
+    void TestNotNull(){
+        assertNotNull(Singleton.getInstance(), "Singleton should never be null");
     }
 }
